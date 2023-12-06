@@ -2,17 +2,11 @@
 export default {
     name: 'Hero',
     title: 'Hero Section',
-    type: 'document',
+    type: 'object',
     fields: [
       // Hero Section
 
-      // Hero Name
-      {
-        name: 'heroName',
-        title: 'Hero Name',
-        type: 'string',
-      },
-      
+     
 
       {
         name: 'hero',
@@ -28,8 +22,13 @@ export default {
             },
           },
           {
-            name: 'heroHeader',
-            title: 'Hero Header',
+            name: 'heroLabel',
+            title: 'Hero Label',
+            type: 'string',
+          },
+          {
+            name: 'heroTitle',
+            title: 'Hero Title',
             type: 'string',
           },
           {
@@ -45,20 +44,12 @@ export default {
           {
             name: 'heroButtonLink',
             title: 'Hero Button Link',
-            type: 'url',
+            type: 'string',
           },
         ]
       },
 
-      {
-        name: 'slug',
-        title: 'Slug',
-        type: 'slug',
-        options: {
-          source: 'heroName', // Use the heroName field as the source for the slug
-          slugify: (input) => input.toLowerCase().replace(/\s+/g, '-'), // Customize the slug generation if needed
-        },
-      }
+     
       
     ],
   }

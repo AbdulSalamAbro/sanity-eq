@@ -1,4 +1,7 @@
 // Home Page Schema
+
+
+
 export default // Home Page Schema
   {
     name: 'homePage',
@@ -14,35 +17,26 @@ export default // Home Page Schema
       {
         name: 'heroSection',
         title: 'Hero Section',
-        type: 'reference',
-        to: [{ type: 'Hero' }], // Reference the 'Hero' document type
+        type: 'Hero',
+       
       },
 
 
       // Blogs First Grid
       {
         name: 'ThreeInsightCards',
-        title: "Three Insight Cards",
-        type: 'object',
-        fields: [
+        title: 'Three Insight Cards',
+        type: 'array',
+        of: [
+         
           {
-            name: "show",
-            title: "Show",
-            type: "boolean"
+            type: 'reference',
+            to: [{ type: 'featuredSection' }],
           },
-          {
-            name: 'Insights',
-            title: 'Insights',
-            type: 'array',
-            of: [
-              {
-                type: 'reference',
-                to: [{ type: 'Insight' }],
-              },
-            ],
-          },
-        ]
+        ],
       },
+      
+    
 
       // Featured Blog Card (Full Width)
       {
@@ -111,56 +105,34 @@ export default // Home Page Schema
           }
         ]
       },
-
-      // Styled Featured Blog Card
+      
+      // Single Insight Section
       {
-        name: 'StyledFeaturedInsightCard2',
-        title: "Styled Featured Insight Card 2",
-        type: 'object',
-        fields: [
-          {
-            name: "show",
-            title: "Show",
-            type: 'boolean'
-          },
-          {
-            name: 'featuredInsight',
-            title: "Featured Insight",
-            type: 'reference',
-            to: [{ type: 'Insight' }],
-          }
-        ]
-      },
+        name: 'contentSection',
+        title: 'Content Section',
+        type: 'reference',
+        to: [{ type: 'contentSection' }],
+      }, 
 
       // Grid of blog posts with a title
-      {
+      
+       {
         name: 'InsightsPostGrid',
         title: 'Insights Post Grid',
-        type: 'object',
-        fields: [
+        type: 'array',
+        of: [
+         
           {
-            name: "show",
-            title: "Show",
-            type: "boolean"
+            type: 'reference',
+            to: [{ type: 'featuredSection' }],
           },
-          {
-            name: "title",
-            title: "Title",
-            type: "string"
-          },
-          {
-            name: 'InsightCards',
-            title: 'Insight Cards',
-            type: 'array',
-            of: [
-              {
-                type: 'reference',
-                to: [{ type: 'Insight' }],
-              },
-            ],
-          },
-        ]
+        ],
       },
+
+
+
+      
+      
       {
         name: 'slug',
         title: 'Slug',

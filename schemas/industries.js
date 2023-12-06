@@ -11,11 +11,13 @@ export default // Industries Page Schema
         title: 'Page Name',
         type: 'string',
       },
+      
+      
       {
         name: 'heroSection',
         title: 'Hero Section',
-        type: 'reference',
-        to: [{ type: 'Hero' }], // Reference the 'Hero' document type
+        type: 'Hero',
+       
       },
       {
         name: 'secondaryNavbar',
@@ -49,8 +51,8 @@ export default // Industries Page Schema
       {
         name: 'bannerSection',
         title: 'Banner Section',
-        type: 'reference',
-        to: [{ type: 'Banner' }], // Reference the 'Banner' document type
+        type: 'Banner',
+    
       },
 
 
@@ -95,41 +97,30 @@ export default // Industries Page Schema
         to: [{ type: 'Newsletter' }],
       },
       
-       // Blog Grid
+       // Top Industry Insights
        {
-        name: 'InsightCards',
-        title: "Insight Cards",
-        type: 'object',
-        fields: [
-
+        name: 'TopIndustrynIsights',
+        title: 'Top Industry Insights',
+        type: 'array',
+        of: [
+         
           {
-            name: 'title',
-            title: 'Title',
-            type: 'string',
+            type: 'reference',
+            to: [{ type: 'featuredSection' }],
           },
-          
-          {
-            name: 'InsightCard',
-            title: 'Insight Card',
-            type: 'array',
-            of: [
-              {
-                type: 'reference',
-                to: [{ type: 'Insight' }],
-              },
-            ],
-          },
-        ]
+        ],
       },
+      
 
     
       {
-        name: 'talkWithUsSection',
-        title: 'talk With Us Section',
+        name: 'CTA',
+        title: 'CTA',
         type: 'reference',
-        to: [{ type: 'talkWithUsSection' }],
+        to: [{ type: 'CTA' }],
       },
-      
+
+    
       {
         name: 'slug',
         title: 'Slug',

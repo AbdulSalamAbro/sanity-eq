@@ -11,12 +11,15 @@ export default // Services Page Schema
         title: 'Page Name',
         type: 'string',
       },
+      
       {
         name: 'heroSection',
         title: 'Hero Section',
-        type: 'reference',
-        to: [{ type: 'Hero' }], // Reference the 'Hero' document type
+        type: 'Hero',
+       
       },
+
+     
 
 
       {

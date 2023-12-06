@@ -2,16 +2,11 @@
 export default {
     name: 'Banner',
     title: 'Banner Section',
-    type: 'document',
+    type: 'object',
     fields: [
       // Banner Section
 
-      // Banner Name
-      {
-        name: 'BannerName',
-        title: 'Banner Name',
-        type: 'string',
-      },
+    
 
       {
         name: 'BannerHeaderOne',
@@ -30,15 +25,7 @@ export default {
         type: 'string',
       },
 
-      {
-        name: 'slug',
-        title: 'Slug',
-        type: 'slug',
-        options: {
-          source: 'BannerName', // Use the heroName field as the source for the slug
-          slugify: (input) => input.toLowerCase().replace(/\s+/g, '-'), // Customize the slug generation if needed
-        },
-      }
+    
       
     ],
   }

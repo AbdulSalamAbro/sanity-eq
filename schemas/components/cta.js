@@ -1,7 +1,7 @@
 export default {
 
-    name: 'talkWithUsSection',
-    title: 'Talk with Us Section',
+    name: 'CTA',
+    title: 'Call To Action',
     type: 'document',
 
     fields: [

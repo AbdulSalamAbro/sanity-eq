@@ -3,21 +3,8 @@ export default {
     title: 'Newsletter',
     type: 'document',
     fields: [
-      {
-        name: 'title',
-        title: 'Section Title',
-        type: 'string',
-      },
-      {
-        name: 'description',
-        title: 'Section Description',
-        type: 'text',
-      },
-      {
-        name: 'newsletterForm',
-        title: 'Newsletter Form',
-        type: 'object',
-        fields: [
+    
+
           {
             name: 'formTitle',
             title: 'Form Title',
@@ -38,8 +25,22 @@ export default {
             title: 'Submit Button Text',
             type: 'string',
           },
-        ],
-      },
+        
+    
     ],
+
+    preview: {
+   
+      select: {
+        customTitle: 'formTitle',
+      },
+    
+      prepare({customTitle}) {
+        return {
+          title: `Newsletter Section: ${customTitle}`, //  custom name
+          
+        };
+      },
+    },
   }
   
